@@ -5,23 +5,25 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function (req, res) {
     let result;
+    let oper1 = parseInt(req.query.x);
+    let oepr2 = parseInt(req.query.y);
 
     switch (req.query.method) {
         case 'add':
-            result = parseInt(req.query.x) + parseInt(req.query.y);
-            res.send(req.query.x + ' + ' + req.query.y + ' = ' + result);
+            result = oper1 + oepr2;
+            res.send(oper1 + ' + ' + oepr2 + ' = ' + result);
             break;
         case 'subtract':
-            result = parseInt(req.query.x) - parseInt(req.query.y);
-            res.send(req.query.x + ' - ' + req.query.y + ' = ' + result);
+            result = oper1 - oepr2;
+            res.send(oper1 + ' - ' + oepr2+ ' = ' + result);
             break;
         case 'multiply':
-            result = parseInt(req.query.x) * parseInt(req.query.y);
-            res.send(req.query.x + ' * ' + req.query.y + ' = ' + result);
+            result = oper1 * oepr2;
+            res.send(oper1 + ' * ' + oepr2 + ' = ' + result);
             break;
         case 'divide':
-            result = parseInt(req.query.x) / parseInt(req.query.y);
-            res.send(req.query.x + ' / ' + req.query.y + ' = ' + result);
+            result = oper1 / oepr2;
+            res.send(oper1 + ' / ' + oepr2 + ' = ' + result);
             break;
         default:
             res.send('Input proper method');
